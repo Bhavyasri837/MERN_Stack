@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
     <form>
         <label>name:</label>
-        <input type="text" placeholder="john" />
+        <input type="text" id="name" placeholder="john" />
         <br>
         <label>email:</label>
-        <input type="email" placeholder="abc@gmail.com" />
+        <input type="email" id="email" placeholder="abc@gmail.com" />
         <br>
         <label>password:</label>
-        <input type="password" placeholder="********" />
+        <input type="password" id="password" placeholder="********" />
+        <br>
+        <label>Phone:</label>
+        <input type="tel" id="phone">
         <br>
         <label>gender:</label>
-        <label>female</label>   
-        <input type="radio" name="gender" value="male" required/>
-        <label>male</label>
-        <input type="radio" name="gender" value="female" required/> 
+        <label>Male</label>
+        <input type="radio" name="gender" value="male">
+        <label>Female</label>
+        <input type="radio" name="gender" value="female">
         <br>
         <label>qualification:</label>
-        <input type="checkbox" name="qualification" value="10th" required/>10th
-        <input type="checkbox" name="qualification" value="12th" required/>12th
-        <input type="checkbox" name="qualification" value="graduation" required/>graduation
-        <input type="checkbox" name="qualification" value="post graduation" required>post graduation
+        <input class="qualification" type="checkbox" name="qualification" value="10th" required/>10th
+        <input class="qualification" type="checkbox" name="qualification" value="12th" required/>12th
+        <input class="qualification" type="checkbox" name="qualification" value="graduation" required/>graduation
+        <input class="qualification" type="checkbox" name="qualification" value="post graduation" required>post graduation
             <br>
         <label>DOB:</label>
         <input type="date" name="dob" required/>    
@@ -47,7 +50,7 @@
         <br>
         <label>select</label>
         <select name="select" required> 
-        <br>
+       
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -55,8 +58,10 @@
             <option value="5">5</option>
         </select>
         <br>
-        <button type="submit">submit</button>   
+        <button type="button" onclick="show()">submit</button>   
     </form>
-
+    <div id="result"></div>
+    <img id="preview" width="250" height="250" alt="Image Preview">
+<script src="../JS/script.js"></script>
 </body>
 </html>
