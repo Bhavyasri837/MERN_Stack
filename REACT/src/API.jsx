@@ -6,7 +6,6 @@ function API()
     const [user,setUser]=useState([]);
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
-    const [phone,setPhone]=useState("");
 
     useEffect(()=>{getUsers()},[]);
     async function getUsers()
@@ -20,11 +19,12 @@ function API()
             alert(error);
         }
     }
-    async function assuser()
+    async function adduser()
     {
-        if(name==""||mail=="")
+        if(name===""||email==="")
             {
                 alert("please fill all the fields");
+                return;
             }
             try{
                 const response=await axios.post(API,{
@@ -33,7 +33,7 @@ function API()
                 });
                 setUser([...user,response.data]);
                 setName("");
-                serEmail("");
+                setEmail("");
                 alert("user added sucessfully");
             }
             catch(error)
@@ -79,8 +79,64 @@ function API()
             alert(error);
         }
     }
-    return(
+    return (
+  <>
+    <div>
+      <h1>React CRUD Operation Using API</h1>
 
-    );
+      <label><b>Name:</b></label>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <br />
+
+      <label><b>Email:</b></label>
+      <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <br />
+
+      <button onClick={adduser}>Add User</button>
+
+      <br />
+      <br />
+
+      {user.map((user) => (
+        <div
+          key={user.id}
+          style={{
+            margin: "20px",
+            border: "2px solid black",
+            padding: "10px",
+          }}
+        >
+          <h2>{user.name}</h2>
+          <h3>{user.email}</h3>
+
+          <button
+            onClick={() => {
+              setName(user.name);
+              setEmail(user.email);
+            }}
+          >
+            Edit
+          </button>
+
+          <button onClick={() => updateuser(user.id)}>
+            Update
+          </button>
+
+          <button onClick={() => deleteuser(user.id)}>
+            Delete
+          </button>
+        </div>
+      ))}
+    </div>
+  </>
+);
 }
 export default API;
