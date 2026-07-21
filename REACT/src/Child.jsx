@@ -1,9 +1,5 @@
-import React from 'react'
-import Grandchild from "./GrandChild.jsx"
-export default function Child() {
-  return (
-    <div>
-      
-    </div>
-  )
+import GrandChild from "./GrandChild";
+function Child({name}){
+    return <GrandChild name={name}></GrandChild>
 }
+export default Child;

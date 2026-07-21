@@ -1,9 +1,7 @@
-import React from 'react'
+function GrandChild({name}){
+    return(
+        <h2>name:{name}</h2>
+    );
 
-export default function GrandChild() {
-  return <h2>{name</h2> (
-    <div>
-      
-    </div>
-  )
 }
+export default GrandChild;
