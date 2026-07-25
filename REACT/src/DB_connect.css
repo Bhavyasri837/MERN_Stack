@@ -1,0 +1,14 @@
+h1
+{
+    color:rgb(219, 86, 9);
+}
+label{
+    color:blue;
+}
+div{
+    border:1px solid black;
+    
+    margin:20px;
+    text-align: center;
+    background-color: aqua;
+}
