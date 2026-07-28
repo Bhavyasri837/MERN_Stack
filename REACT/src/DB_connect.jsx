@@ -37,7 +37,7 @@ function DB_connect()
                 headers:{
                     'Content-Type':'application/json'
                 },
-                body:JSON.stringify(FormData)
+                body:JSON.stringgify(FormData)
             });
             const result=await response.json();
             if(response.ok)
